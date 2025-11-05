@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocky Maps | Angel of Love - Electronic Press Kit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Purple Palette */
+        :root {
+            --primary-purple: #673ab7; /* Deep Royal Purple */
+            --light-purple: #9575cd;   /* Lighter accent/hover */
+            --v-light-purple: #d1c4e9; /* Very Light Separator */
+            --background-color: #f8f8ff; /* Ghost White for ethereal feel */
+            --text-color: #333333;
+        }
+
+        /* General Reset and Base Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        /* Container for Centering and Max Width */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: var(--primary-purple);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0 0 5px 0;
+            font-size: 3em;
+            letter-spacing: 3px;
+            font-weight: 700;
+        }
+        header p {
+            margin: 0;
+            font-size: 1.2em;
+            font-weight: 300;
+            opacity: 0.85;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 40px 20px;
+            margin-bottom: 25px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        h2 {
+            color: var(--primary-purple);
+            border-bottom: 3px solid var(--v-light-purple); /* Light Purple separator */
+            padding-bottom: 10px;
+            margin-top: 0;
+            font-weight: 700;
+        }
+
+        /* Profile and Image Styles */
+        .profile-img-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .profile-img-container img {
+            /* === PICTURE 1: Main Headshot / Primary Promotional Image === */
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 50%; /* Circular image */
+            border: 6px solid var(--light-purple);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .profile-img-container img:hover {
+            transform: scale(1.03);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .gallery img {
+            /* === PICTURE 2 & 3: Secondary Promotional Photos / Live Shots === */
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Quick Facts Table */
+        .quick-facts table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        .quick-facts th, .quick-facts td {
+            padding: 12px 10px;
+            border-bottom: 1px solid var(--v-light-purple);
+        }
+        .quick-facts th {
+            width: 30%;
+            color: var(--primary-purple);
+            font-weight: 700;
+        }
+
+        /* Media Links Styling */
+        .media-links a {
+            display: inline-block;
+            background-color: var(--primary-purple);
+            color: white;
+            padding: 12px 25px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+        .media-links a:hover {
+            background-color: var(--light-purple);
+            transform: translateY(-2px);
+        }
+        
+        /* Responsive Video Embed */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            border-radius: 8px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333333;
+            color: white;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+
+        /* ============================================== */
+        /* MOBILE RESPONSIVENESS STYLES          */
+        /* ============================================== */
+        @media (max-width: 650px) {
+            .container {
+                padding: 10px;
+            }
+            header h1 {
+                font-size: 2.2em;
+            }
+            header p {
+                font-size: 1em;
+            }
+            section {
+                padding: 20px 15px;
+                margin-bottom: 15px;
+            }
+            
+            .profile-img-container img {
+                width: 200px; /* Smaller size on mobile */
+                height: 200px;
+            }
+            
+            .quick-facts th, .quick-facts td {
+                padding: 10px 0;
+                font-size: 0.9em;
+            }
+            .quick-facts th {
+                width: 45%; /* Give more space to the value on mobile */
+            }
+
+            .media-links a {
+                display: block; /* Stack links vertically on mobile */
+                margin-right: 0;
+            }
+            
+            .gallery {
+                grid-template-columns: 1fr; /* Stack images on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Rocky Maps</h1>
+        <p>The Angel of Love</p>
+    </header>
+
+    <div class="container">
+
+        <section id="profile">
+            <div class="profile-img-container">
+                <!-- ============================================== -->
+                <!-- 🔥 PICTURE 1: MAIN PROMO SHOT / HEADSHOT 🔥 -->
+                <!-- ACTION: Replace 'path/to/your/main-headshot.jpg' with the actual image file name or public URL -->
+                <img src="Epk images/20241225_143159.jpg" alt="Rocky Maps - Angel of Love Promotional Image">
+                <!-- ============================================== -->
+            </div>
+            <h2>Biography & Vibe</h2>
+
+            <p><strong>Rocky Maps, known as the Angel of Love, creates a unique blend of Hip-Hop and Pop that transcends traditional genre boundaries.</strong> His music juxtaposes ethereal vocals and celestial harmonies with grounded beats and powerful instrumentation, creating a transcendent and uplifting experience inspired by the angelic realm and the power of love.</p>
+
+            <p>Born 11 November 2006, Rocky Maps' sound is characterised by the seamless fusion of Hip-Hop's rhythmic foundation with Pop's melodic accessibility, all elevated by **ethereal vocals** that seem to float between heaven and earth. His celestial harmonies create atmospheric layers that transform traditional beats into something transcendent.</p>
+
+            <p>The artistic approach focuses on the duality of human experience - the grounded reality of powerful beats and instrumentation paired with the aspirational quality of angelic vocals. This philosophy extends beyond music into every aspect of artistic expression, creating a cohesive universe where love and spirituality intersect with contemporary sound.</p>
+        </section>
+
+        <section id="facts" class="quick-facts">
+            <h2>Quick Facts</h2>
+            <table>
+                <tr>
+                    <th>Known As</th>
+                    <td>The Angel of Love</td>
+                </tr>
+                <tr>
+                    <th>Genre Fusion</th>
+                    <td>Hip-Hop, Pop, Ethereal</td>
+                </tr>
+                <tr>
+                    <th>Active Since</th>
+                    <td>2022</td>
+                </tr>
+                <tr>
+                    <th>Based In</th>
+                    <td>Eswatini, Manzini</td>
+                </tr>
+                <tr>
+                    <th>Date of Birth</th>
+                    <td>11 November 2006</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="media" class="media-links">
+            <h2>Music & Video Links</h2>
+            <p>Listen, watch, and share Rocky Maps across all major platforms. Search "Rocky Maps" everywhere.</p>
+            
+            <!-- ============================================== -->
+            <!-- 🔥 MUSIC LINKS: UPDATED WITH YOUR REAL URLS 🔥 -->
+            <!-- ============================================== -->
+            <a href="https://youtube.com/@rockymaps?si=TurxYf5HK6oOXom3" target="_blank">📺 YouTube (Official Channel)</a>
+            <a href="https://open.spotify.com/artist/1UFDW9o7D6CtA6iXu6fS1n?si=2ce670pERviyv9M5eu7rCg" target="_blank">🎧 Spotify Profile</a>
+            <a href="https://youtu.be/fofGb7EjExI?si=LAOtJjuvhsvsh0KQ" target="_blank">✨ Featured Video Link</a>
+            
+            <h3>Featured Video Embed</h3>
+            <div class="video-container">
+                <!-- ACTION: Embed updated using the video ID fofGb7EjExI -->
+                <iframe src="https://www.youtube.com/embed/fofGb7EjExI" title="Rocky Maps Featured Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+        </section>
+
+        <section id="gallery">
+            <h2>Gallery & Assets</h2>
+            <p>High-resolution images and assets for press use.</p>
+            <div class="gallery">
+                <!-- ============================================== -->
+                <!-- 🔥 PICTURE 2: SECONDARY PROMO SHOT 🔥 -->
+                <!-- ACTION: Replace 'path/to/your/second-promo-shot.jpg' -->
+                <img src="Epk images/Picsart_23-12-14_16-07-58-149.jpg" alt="Rocky Maps Secondary Photo">
+
+                <!-- 🔥 PICTURE 3: LIVE SHOT OR ALT PORTRAIT 🔥 -->
+                <!-- ACTION: Replace 'path/to/your/live-performance.jpg' -->
+                <img src="Epk images/VideoCapture_20230321-185513.jpg" alt="Rocky Maps Live Performance">
+                <!-- ============================================== -->
+            </div>
+            
+            <br>
+            <h3>Press Downloadables</h3>
+            <!-- ============================================== -->
+            <!-- 🔥 DOWNLOAD LINKS: Replace # with your public cloud storage links 🔥 -->
+            <!-- ACTION: Update all href="#" with your real links -->
+            <!-- ============================================== -->
+            <a href="https://drive.google.com/drive/folders/1xne2zs5qIeBR07YiYKd-DbJZTB3X73Ez" target="_blank">⬇️ Download Hi-Res Photo (JPG)</a>
+            <a href="https://drive.google.com/file/d/1c6YM4sfCx12uEmuNjpH0ufaadypMtVvr/view?usp=drivesdk" target="_blank">⬇️ Download Full PDF Bio</a>
+
+        </section>
+
+        <section id="contact">
+            <h2>Contact & Booking</h2>
+            <p>For booking and press inquiries, please contact:</p>
+            <p><strong>Email:</strong> rockymapsSD@gmail.com</p>
+            <p><strong>Whatsapp:</strong> +268 79298520</p>
+        </section>
+
+    </div>
+
+    <footer>
+        &copy; 2025 Rocky Maps, The Angel of Love. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
